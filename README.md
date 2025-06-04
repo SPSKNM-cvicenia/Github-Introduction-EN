@@ -1,395 +1,308 @@
+# Welcome to GitHub!
 
-# Vitaj na GitHube!
+You probably haven't encountered GitHub yet, but that's okay. In this guide, we'll explain how **Git** works and focus on important concepts like **Commit** or **Pull Request**.
 
-  
+## Navigation
 
-Asi si sa ešte s GitHubom nestretol/a, to však nevadí. V tejto príručke Ti vysvetlíme, ako funguje **Git**, zameriame sa aj na dôležité pojmy ako **Commit** alebo **Pull Request**.
+* [Basic Concepts](#basic_concepts)
+* [Creating a Repository](#creating_repository)
+* [Setup / Committing from Visual Studio](#commit_vs)
+* [Setup / Committing from GitHub Desktop](#github_desktop)
+* [Setup / Committing from JetBrains Rider](#commit_rider)
+* [Setup / Committing from Terminal](#commit_cmd)
+* [Collaboration between Classmates](#collaboration)
+* [GitHub Student Developer Pack](#student_pack)
+* [Resources](#resources)
 
-  
+## Basic Concepts <a id=basic_concepts>
 
-## Navigácia
+**Git** - Git is an open source tool that allows you to **track changes** in files. It's the fundamental technology that GitHub uses.
 
-*  [Základné pojmy](#zakladne_pojmy)
-*  [Založenie repozitára](#zalozenie_repozitara)
-*  [Setup / Commitovanie z Visual Studia](#commit_vs)
-*  [Setup / Commitovanie z GitHub Desktop](#github_desktop)
-*  [Setup / Commitovanie z Jetbrains Rider](#commit_rider)
-*  [Setup / Commitovanie z terminálu](#commit_cmd)
-*  [Kolaborácia medzi spolužiakmi](#kolaboracia)
-*  [GitHub Student Developer Pack](#student_pack)
-*  [Zdroje](#zdroje)
+**Repository** (**Repo**) - A repository is the basic element of GitHub. You can say it's a **folder** where your project is located. This folder contains all the files of your project and stores the **history of all changes** for each file. You don't have to be the only one with access to the repository, as a repository can have multiple collaborators. A repository can be **public** or **private**.
 
-  
+**Commit** - A commit is a **grouping of changes** in a project. When you commit, Git creates a **unique ID** that allows you to keep records of these changes and also **who** and **when** made the change.
 
-## Základné pojmy <a id= zakladne_pojmy>
+**Organization** - A GitHub Organization is like a profile that **multiple** users have access to. In this organization, you can create repositories.
 
-  
+**Fork** - A fork is a copy of another user's repository that gets saved among your repositories. Forks allow you to freely make changes to a project **without affecting the original repository**. However, you can open a **Pull Request** in the original repository.
 
-**Git** - Git je open source nástroj, ktorý Ti umožní **sledovanie zmien** v súboroch. Je základnou technológiou, ktorú GitHub využíva.
+**Pull Request** - Pull Requests are changes in a repository that a user has proposed and that you as the **owner** (or **collaborator**) of the original repository can **accept** or **reject**.
 
-  
+**Push** - Uploading local changes (not yet on GitHub) that are contained in **commits** to **GitHub**.
 
-**Repository** (**Repozitár**, skrátene **Repo**) - Repozitár je základným prvkom GitHubu. Dá sa povedať, že to je **priečinok**, v ktorom máš umiestnený svoj projekt. Tento priečinok obsahuje všetky súbory Tvojho projektu a ukladá **históriu všetkých zmien** každého súboru. Nemusíš byť jediným, kto má k repozitáru prístup, pretože repozitár môže mať viacerých spolupracovníkov. Repozitár môže byť **verejný** alebo **súkromný**.
+**Pull** - Downloading the **current version** of a repository from GitHub. If you've modified some files, a conflict (**Merge Conflict**) may occur, which needs to be resolved.
 
-  
+**Branch** - A branch is a **project branch** that you can add if you want to fix a bug or experiment with something, but don't want it to affect your project. Every repository has a **default branch**, but can contain others as well.
 
-**Commit** - Commit je nejaké **zoskupenie zmien** v projekte. Keď commituješ, Git vytvára **jedinečné ID**, ktoré Ti umožní uchovávať záznamy o týchto zmenách a aj to, **kto** a **kedy** danú zmenu vykonal.
+**Merge** - Merge is the **combining** of one branch into another by executing a **Pull Request**.
 
-  
+**Merge Conflict** - This is a state where multiple **newer** versions of a file exist in the code and it's unclear which version should be used.
 
-**Organizácia** (**Organisation**) - GitHub Organizácia je ako profil, ku ktorému majú prístup **viacerí** užívatelia. V tejto organizácií si môžeš vytvárať repozitáre.
+**License** - A license is an important file that **allows** or **prohibits** you from using other users' code. A license may contain **conditions** and you can legally use code under this license only if you meet them.
 
-  
+**IDE** - *Integrated Development Environment* - is a **development environment** in which you'll work.
 
-**Fork** - Fork je kópia repozirára iného používateľa, ktorá sa uloží medzi Tvoje repozitáre. Forky Ti umožnia voľne vykonávať zmeny v projekte **bez ovplyvnenia pôvodného repozitára**. Môžeš však otvoriť **Pull Request** v pôvodnom repozitári.
+**readme.md** - This is a text file containing information about the repository. Since it's automatically displayed **under the repository**, it's usually the first file that a visitor to your repository will see. It's written in **Markdown**.
 
-  
+**.gitignore** - gitignore is a file that specifies which parts shouldn't be uploaded along with changes in a commit. It's used to **filter out unnecessary files**, for example those created by the IDE, or **files with sensitive data**.
 
-**Pull Request** - Pull Requesty sú zmeny v repozitári, ktoré navrhol používateľ a ktoré môžeš ako **vlastník** (alebo **spolupracovník**) pôvodného repozirára **prijať**, prípadne **odmietnuť**.
+*Note: These are just basic concepts. We recommend reading the glossary from GitHub's official documentation: https://docs.github.com/en/get-started/quickstart/github-glossary*
 
-  
+## Creating a Repository <a id=creating_repository>
 
-**Push** - Nahranie lokálnych zmien (ešte nie sú na GitHube), ktoré sa nachádzajú v **commitoch**, na **GitHub**.
+1. In the upper right corner, click **+** and click **New Repository**.
 
-  
+![img1](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/newrepo1.png "New repo")
 
-**Pull** - Stiahnutie **aktuálnej verzie** repozitára z GitHubu, v prípade, že si nejaké súbory upravil, tak môže nastať konflikt (**Merge Conflict**), ktorý je nutné vyriešiť.
-  
+2. Name your repository, you can also add a description, **readme** file, **.gitignore**, **license** or change the repository to **private**. Then click **Create Repository**.
 
+![img2](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/newrepo2.png "New repo")
 
-**Branch** - Branch je **vetva projektu**, ktorú môžeš pridať, ak chceš opraviť chybu alebo s niečím experimentovať, ale nechceš, aby ti to ovplyvnilo Tvoj projekt. Každý repozitár má **default branch**, ale môže obsahovať aj ďaľšie.
+## Setup / Committing from Visual Studio <a id=commit_vs>
 
-  
+### Repository Setup
 
-**Merge** - Merge je **zlúčenie** jednej branche do druhej za vykonania **Pull Requestu**.
+After installing Visual Studio, you must synchronize your GitHub repository so you can create commits from it.
 
+1. After opening Visual Studio, choose **Clone a repository**, which is located in the right part of the window.
 
+![imgvs1](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/1.png "vs")
 
-**Merge Conflict** - Je stav, kedy existuje viacero **novších** verzií nejakého súboru v kóde a nie je zrejmé, ktorá verzia sa má použiť.
+2. Here choose **GitHub**.
 
-  
+![imgvs2](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/2.png "vs")
 
-**Licencia** - Licencia je dôležitý súbor, ktorý Ti **povoľuje** alebo **zakazuje** využívať kódy iných užívateľov. Licencia môže obsahovať **podmienky** a kód pod touto licenciou môžeš legálne použiť iba vtedy, ak ich spĺňaš.
+3. A window will pop up where you can log in by clicking **Sign in...** in the upper right part.
 
-  
+![imgvs3](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/3.png "vs")
 
-**IDE** - *Integrated development environment* - je **vývojové prostredie** v ktorom budeš pracovať.
+![imgvs4](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/4.png "vs")
 
-  
+4. After successful login, Visual Studio will make your repositories available.
 
-**readme.md** - Je to textový súbor obsahujúci informácie o repozitári. Keďže sa automaticky zobrazuje **pod repozitárom**, je zvyčajne prvým súborom, ktorý návštevník Tvojho repozitára uvidí. Tvorí sa v **MarkDowne**.
+![imgvs5](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/5.png "vs")
 
-  
+After selecting one of the repositories, it will download and you can edit it or use it otherwise.
 
-**.gitignore** - gitignore je súbor, ktorý špecifikuje, ktoré časti by sa nemali nahrávať spolu so zmenami v commite. Používa sa na **vyfiltrovanie zbytočných súborov**, napríklad tých, ktoré vytvorí IDE, prípadne **súborov s citlivými dátami**.
+### Committing
 
-  
+After editing files, you must commit the changes.
 
-*Pozn.: Toto sú len základné pojmy. Odporúčame, aby si si prečítal(a) slovník z oficiálnej dokumentácie GitHubu: https://docs.github.com/en/get-started/quickstart/github-glossary*
+1. After editing the project, Visual Studio will show how many changes were made. Click on the pencil in the lower right corner with a number (the number symbolizes how many files were changed), and the **GIT panel** will open.
 
-  
+![imgvs6](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/6.png "vs")
 
-## Založenie Repozitára <a id = zalozenie_repozitara>
+2. Write a description of the commit and press **Commit All**.
 
-  
+![imgvs7](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/7.png "vs")
 
-1. V pravom hornom rohu, rozklikni **+** a klikni na **New Repository**.
+![imgvs8](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/8.png "vs")
 
-  
+3. Notice that Visual Studio says the commit was created locally - this means it's not yet in your repository on GitHub, but only on your computer. If you want to put it on GitHub, click **Push**, and Visual Studio will push it to GitHub.
 
-![img1](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/newrepo1.png  "Nové repo")
+![imgvs9](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/9.png "vs")
 
-  
+![imgvs10](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/10.png "vs")
 
-2. Pomenuj svoj repozirár, môžeš pridať aj popis, **readme** súbor, **.gitignore**, **licenciu** alebo zmeniť repozitár na **súkromný**. Následne klikni na **Create Repository**.
+### Downloading Changes from GitHub / Fetch
 
-  
+Changes that were made in the repository by someone else won't download automatically, you must first **fetch** them and then **pull** them.
 
-![img2](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/newrepo2.png  "Nové repo")
+1. In the Git panel, click **Fetch**.
 
-  
+![imgvs11](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/11.png "vs")
 
-## Setup / Commitovanie z Visual Studia <a id = commit_vs>
+2. Visual Studio will then show you how many commits need to be downloaded so you have the most current version of the repository:
 
-### Setup repozitára
+![imgvs12](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/12.png "vs")
 
-Po inštalacií Visual Studia si musíš synchronizovať GitHub repozitár, aby si z neho mohol vytvárať commity.
+3. Click on the **number of changes** and then on **Pull**.
 
-1. Po otvorení Visual Studia zvoľ možnosť **Clone a repository**, ktorá sa nachádza v pravej časti okna.
+![imgvs13](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/13.png "vs")
 
-![imgvs1](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/1.png  "vs")
+## Setup / Committing from GitHub Desktop <a id=github_desktop>
 
-2. Tu zvoľ možnosť **GitHub**.
+Unlike other **IDEs**, GitHub Desktop is a stand-alone GIT client, which means it doesn't have IDE elements (Compiler, code editor, ...) but is intended only for committing and other GIT operations.
 
-![imgvs2](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/2.png  "vs")
+### Repository Setup
+After installing GitHub Desktop, you must synchronize your GitHub repository so you can commit from it.
 
-3. Vyskočí na teba okno, v ktorom sa môžeš v pravej hornej časti prihlásiť kliknutím na **Sign in...**.
+1. On the left, click **Clone a repository from the Internet**
+2. Then choose **GitHub.com** and click **Sign In**. Then in the security warning window, click **Continue with browser**.
 
-![imgvs3](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/3.png  "vs")
+![img_gh1](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/1.png "ghd")
 
-![imgvs4](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/4.png  "vs")
+![img_gh2](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/2.png "ghd")
 
-4. Po úspešnom prihlásení Ti Visual Studio sprístupní tvoje repozitáre.
+![img_gh3](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/3.png "ghd")
 
-![imgvs5](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/5.png  "vs")
+4. In the browser, log into GitHub (if you're not already) and click **Authorize desktop**.
 
-Po vybraní jedného z repozitárov sa Ti stiahne a môžeš ho upraviť alebo inak využívať.
+![img_gh4](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/4.png "ghd")
 
-  
+6. Your repositories will be displayed on the right. Choose the correct one and click **Clone [repository name]**. Choose where you want to save it and click **Clone**.
 
-### Commitovanie
+![img_gh5](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/5.png "ghd")
 
-Po úprave súborov musíš commitnúť zmeny.
+![img_gh6](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/6.png "ghd")
 
-1. Po úprave projektu Ti Visual Studio vypíše, koľko zmien sa vykonalo. Klikneš na ceruzku v pravom dolnom rohu s číslom (číslo symbolizuje kolko súborov sa zmenilo), otvorí sa Ti **GIT panel**.
+![img_gh7](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/7.png "ghd")
 
-  
+8. Your repository has just been cloned and you can start working.
 
-![imgvs6](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/6.png  "vs")
+![img_gh8](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/8.png "ghd")
 
-2. Vypíšeš popis commitu a zmáčneš **Commit All**.
+### Committing
+After editing files, you need to make a **commit**. GitHub Desktop automatically tracks changes in files and displays them on the panel in the left part with each change.
 
-![imgvs7](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/7.png  "vs")
+1. In the lower left corner, write the commit name and optionally description, then click **Commit to master**.
 
-![imgvs8](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/8.png  "vs")
+![img_gh9](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/9.png "ghd")
 
-3. Všimni si, že Visual Studio píše, že commit bol vytvorený lokálne - to znamená, že ešte nie je v tvojom repozitári na GitHube, ale len v Tvojom počítači. Ak ho chceš dať na GitHub, klikni na **Push**, a Visual Studio to pushne na GitHub.
+2. Notice that your commit is not yet on GitHub, and GitHub Desktop says that one (or more) commits are available that haven't been **pushed** to GitHub yet - this means these commits are not yet in your repository on GitHub, but only on your computer. If you want to put them on GitHub, click **Push origin**, and GitHub Desktop will automatically push them to GitHub.
 
-![imgvs9](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/9.png  "vs")
+![img_gh10](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/10.png "ghd")
 
-![imgvs10](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/10.png  "vs")
+### Downloading Changes from GitHub / Fetch
+Changes that were made in the repository by someone else won't download automatically, you must first **fetch** them and then **pull** them.
 
-  
+1. On the top panel, click **Fetch Origin**. This will check the state of the repository and whether a newer commit is available.
 
-### Sťahovanie zmien z GitHubu / Fetch
+![img_gh11](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/11.png "ghd")
 
-Zmeny, ktoré boli vykonané v Repozitári niekým iným, sa Ti automaticky nestiahnú, musíš si ich najskôr **fetchnúť** a potom **pullnúť**.
+2. If a newer commit is available, you'll see the option to **pull** changes. Pull them by clicking **Pull origin**.
 
-  
+![img_gh12](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/12.png "ghd")
 
-1. V Git paneli klikni na **Fetch**.
+## Setup / Committing from JetBrains Rider <a id=commit_rider>
 
-![imgvs11](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/11.png  "vs")
+### Repository Setup
 
-  
+After installing JetBrains Rider, you must synchronize your GitHub repository so you can commit from it.
 
-2. Visual Studio Ti potom vypíše, že koľko commitov je potrebné stiahnuť, aby si mal najaktuálnejšiu verziu repozitára:
+1. After opening JetBrains Rider, choose **Get from VCS**.
 
-  
+![imgrd1](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/1.png "rider")
 
-![imgvs12](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/12.png  "vs")
+2. After opening a new window, check if Rider recognizes Git in the system. If you see **Git is not installed**, click **Download and install** and wait for the process to finish (it may take a few minutes).
 
-3. Klikneš na **počet zmien** a následne na **Pull**.
+![imgrd2](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/2.png "rider")
 
-  
+3. On the left in the menu, click **GitHub** and then **Log in via GitHub...**, which will open a web browser. Click the **Authorize in GitHub** button, log in, and after successful login, you'll see that you've successfully logged into GitHub and can close the tab.
 
-![imgvs13](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/vs/13.png  "vs")
+![imgrd3](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/3.png "rider")
 
-## Setup / Commitovanie z GitHub Desktop <a id = github_desktop>
+![imgrd4](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/4.png "rider")
 
-Na rozdiel od ostatných **IDE**, GitHub Desktop je stand-alone GIT client, to znamená, že nemá prvky IDE (Compiler, code editor, ...) ale je určený len na commitovanie a iné GIT operácie. 
-
-### Setup Repozitára
-Po inštalacií GitHub Desktop si musíš ešte synchronizovať GitHub repozitár, aby si z neho mohol commitovať.
-
-1. Naľavo klikneš na **Clone a repository from the Internet**
-2. Následne zvolíš **GitHub.com** a klikneš na **Sign In** Potom v okne upozornujúcom na bezpečnosť klikni na **Continue with browser**.
-
-![img_gh1](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/1.png  "ghd")
-
-![img_gh2](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/2.png  "ghd")
-
-![img_gh3](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/3.png  "ghd")
-
-
-4. V prehladači sa prihlás do GitHubu (ak ešte nie si) a klikni na **Authorize desktop**.
-
-![img_gh4](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/4.png  "ghd")
-
-6. Napravo sa Ti zobrazia Tvoje repozitáre. Zvoľ si ten správny a klikni na **Clone [meno repozitára]** Vyber si, že kde ho chceš uložiť a klikni na **Clone**.
-
-![img_gh5](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/5.png  "ghd")
-
-![img_gh6](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/6.png  "ghd")
-
-![img_gh7](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/7.png  "ghd")
-
-8. Tvoj repozitár sa práve naklonoval a môžeš začať pracovať.
-
-![img_gh8](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/8.png  "ghd")
-
-
-### Commitovanie
-Po úprave súborov je potrebné vykonať **commit**. GitHub Desktop Ti automaticky sleduje zmeny v súboroch a pri každej zmene ich vypíše na panel v ľavej časti.
-
-1. V ľavom dolnom roku vypíš názov commitu prípadne popis a klikni na **Commit to master**.
-
-![img_gh9](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/9.png  "ghd")
-
-2. Všimni si, že Tvoj commit ešte nie je na GitHube, a GitHub Desktop píše, že je k dispozíci jeden (alebo viacero) commitov, ktoré ešte neboli **pushnuté** na Github  - to znamená, že dané commity ešte nie sú v Tvojom repozitári na GitHube, ale len v Tvojom počítači. Ak ich chceš dať na GitHub, klikni na  **Push origin**, a Github Desktop to automaticky pushne na GitHub.
-
-![img_gh10](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/10.png  "ghd")
-
-### Sťahovanie zmien z GitHubu / Fetch
-Zmeny, ktoré boli vykonané v repozitári niekým iným, sa Ti automaticky nestiahnú, musíš si ich najskôr **fetchnúť** a potom **pullnúť**.
-
-1. Na paneli hore klikni na **Fetch Origin**. Toto overí stav, v ktorom sa nachádza repozitár a či je k dispozicií novší commit.
-
-![img_gh11](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/11.png  "ghd")
-
-2. V prípade, že je k dispozícií novší commit, zobrazí sa Ti možnosť **pullnuť** zmeny. Pullni ich kliknutím na **Pull origin**.
-
-![img_gh12](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/ghd/12.png  "ghd")
-
-## Setup / Commitovanie z Jetbrains Rider <a id = commit_rider>
-
-### Setup Repozitára
-
-Po inštalacií Jetbrains Rider si musíš synchronizovať GitHub repozitár, aby si z neho mohol commitovať.
-
-1. Po otvorení Jetbrains Rider zvoľ možnosť **Get from VCS**.
-
-![imgrd1](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/1.png  "rider")
-
-2. Po otvorení nového okna skontroluješ, či Rider rozoznáva Git v systéme. Pokiaľ sa Ti zobrazuje možnosť **Git is not intalled**, klikni na **Download and install** a počkaj kým sa proces skončí (môže to trvať pár minút).
-
-![imgrd2](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/2.png  "rider")
-
-3. Naľavo v menu klikni na **GitHub** a potom na možnosť **Log in via Github...**, čo Ti otvorí internetový prehliadač. Klikni na tlačidlo **Authorise in Github**, prihlás sa a po úspešnom prihlásení sa Ti zobrazí, že si sa úspešne prihlásil do Githubu a že môžeš zavrieť kartu.
-
-![imgrd3](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/3.png  "rider")
-
-![imgrd4](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/4.png  "rider")
-
-![imgrd5](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/5.png  "rider")
+![imgrd5](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/5.png "rider")
 
 ![imgrd6](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/6.png "rider")
 
-4. Po úspešnom prihlásení Ti Rider ponúkne Tvoje repozitáre na stiahnutie:
+4. After successful login, Rider will offer your repositories for download:
 
 ![imgrd7](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/7.png "rider")
 
-5. Klikni na tlačidlo **Clone** - Repozitár sa Ti automaticky stiahne a môžeš ho používať.
+5. Click the **Clone** button - The repository will automatically download and you can use it.
 
-### Commitovanie
+### Committing
 
-Po úprave súborov je potrebné vykonať **commit**.
+After editing files, you need to make a **commit**.
 
-  
-
-1. V pravom hornom rohu vidíš ikony ponuky **GIT**. Na commitovanie klikni na zelenú fajku.
+1. In the upper right corner, you see **GIT** menu icons. For committing, click the green checkmark.
 
 ![imgrd7](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/11.png "rider")
 
-  
-
-2. Otovrí sa Ti ponuka naľavo, ktorá ukazuje zmenené súbory. Dole napíš popis commitu a klikni na **Commit and Push**.
+2. A menu will open on the left showing changed files. Write a commit description at the bottom and click **Commit and Push**.
 
 ![imgrd7](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/12.png "rider")
 
-  
-
-3. Tento krok je nutný iba po **prvom commite** z nového **IDE**: Git potrebuje Tvoje údaje pre prvé spustenie. Informácie zadáš a následne klikneš na **Set and commit**.
-
-  
+3. This step is only necessary after the **first commit** from a new **IDE**: Git needs your information for the first run. Enter the information and then click **Set and commit**.
 
 ![imgrd7](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/13.png "rider")
 
-  
-
-4. Zobrazí sa Ti okno, ktoré Ti zhrnie, aké zmeny ideš vykonať. Klikni na tlačidlo **Push** a Rider nahrá zmeny priamo na GitHub.
-
-  
+4. A window will appear summarizing what changes you're about to make. Click the **Push** button and Rider will upload the changes directly to GitHub.
 
 ![imgrd7](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/14.png "rider")
 
-  
+### Downloading Changes from GitHub / Fetch
 
-### Sťahovanie zmien z GitHubu / Fetch
+Changes that were made in the repository by someone else won't download automatically, you must first **fetch** them and then **pull** them.
 
-Zmeny, ktoré boli vykonané v Repozitári niekým iným, sa Ti automaticky nestiahnú, musíš si ich najskôr **fetchnúť** a potom **pullnúť**.
-
-1. V GIT paneli klikni na modrú šípku smerujúcu nadol.
+1. In the GIT panel, click the blue arrow pointing down.
 
 ![imgrd7](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/16.png "rider")
 
-2. Po kliknutí zvoľ možnosť **Merge incomming changes into current branch**.
+2. After clicking, choose **Merge incoming changes into current branch**.
 
 ![imgrd7](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/rider/17.png "rider")
 
-
-
-## Setup / Commitovanie z terminálu <a id = commit_cmd>
+## Setup / Committing from Terminal <a id=commit_cmd>
 
 ### Setup
-1. Stiahni **GIT** (návod na stiahnutie je k dispozícii na [ich stránkach](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
-2. Nakonfiguruj svoje **meno** a **email**.
+1. Download **GIT** (installation guide is available on [their website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)).
+2. Configure your **name** and **email**.
 ```
-$ git config --global user.name "Tvoj Github Login"
-$ git config --global user.email "tvoj_email@nieco.nieco"
+$ git config --global user.name "Your Github Login"
+$ git config --global user.email "your_email@something.something"
 ```
-3. **Inicializuj** Git repozitár v zložke. Tento príkaz vytvorí nový tzv. lokálny repozitár. Lokálne repozitáre uchovávajú zmeny iba u teba na počítači.
+3. **Initialize** a Git repository in the folder. This command creates a new so-called local repository. Local repositories store changes only on your computer.
 ```
 $ git init
 ```
 
-Ak chceš používať GitHub, musíš ho pridať ako remote origin. Remote origin je repozitár, ktorý bude synchronizovaný s tvojím lokálnym. To znamená, že zmeny vykonané na GitHube (ako na remote) si budeš môcť pullnuť, a zmeny vykonané v lokálnom repozitári budeš môcť pushnuť. Tento proces je však automatizovaný, stačí teda vykonávať príkazy zo sekcií Commitovanie a Sťahovanie zmien z GitHubu. Ak chceš pridať tvoje repo ako remote, vykonaj následovný príkaz, len si zmeň URL adresu:
+If you want to use GitHub, you must add it as a remote origin. Remote origin is a repository that will be synchronized with your local one. This means you'll be able to pull changes made on GitHub (as remote), and push changes made in the local repository. However, this process is automated, so you just need to execute commands from the Committing and Downloading changes from GitHub sections. If you want to add your repo as remote, execute the following command, just change the URL address:
 ```
-$ git remote add origin "https://github.com/github_login/meno_repozitara.git"
+$ git remote add origin "https://github.com/github_login/repository_name.git"
 ```
 
-3. Nastav si **vetvu**, v ktorej chceš pracovať (spravidla `main` alebo `master`).
+3. Set the **branch** you want to work in (usually `main` or `master`).
 ```
 $ git branch -M main
 ```
-### Commitovanie
-1. Vyber všetky **zmeny**, ktoré chceš **nahrať**.
+### Committing
+1. Select all **changes** you want to **upload**.
 ```
-$ git add <zmenený_súbor>
+$ git add <changed_file>
 ```
-poprípade, ak chceš nahrať **všetky súbory**, tak treba zadať:
+or, if you want to upload **all files**:
 ```
 $ git add .
 ```
-2. **Commitni** zmeny s vhodným **popisom** zmien.
+2. **Commit** changes with an appropriate **description** of changes.
 ```
-$ git commit -m "toto je popis commitu"
+$ git commit -m "this is a commit description"
 ```
-3. **Pushni** commitnuté zmeny na GitHub.
+3. **Push** committed changes to GitHub.
 ```
 $ git push
 ```
-### Sťahovanie zmien z GitHubu / Fetch
-1. Pokiaľ chceš **iba zistit informácie** o **aktuálnej verzii** remote repozitára, vykonaj príkaz:
+### Downloading Changes from GitHub / Fetch
+1. If you want to **only get information** about the **current version** of the remote repository, execute:
 ```
 $ git fetch
 ```
-2. Pokiaľ ích **chceš následovne stiahnuť**, použiješ príkaz:
+2. If you want to **download them afterwards**, use:
 ```
 $ git pull
 ```
 
-## Kolaborácia medzi spolužiakmi <a id = kolaboracia>
+## Collaboration between Classmates <a id=collaboration>
 
-  
+You're in a team with a classmate and you need to work on a project together, but you don't want each of you to have your own repository, you want to work on one. In that case, you can add your classmate as a collaborator to your repository.
 
-Si v tíme so spolužiakom a máte spoločne robiť na projekte, no nechceš, aby ste mali každý svoj repozitár, chcete pracovať na jednom. V takom prípade môžeš spolužiaka pridať ako spolupracovníka do svojho repozitára.
-
-1. Pôjdeš do **nastavení repozitára**.
+1. Go to **repository settings**.
 
 ![img3](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/privrep1.png "settings")
 
-2. Klikneš na **Manage Access** (Môže vyžadovať opätovné prihlásenie).
+2. Click **Manage Access** (May require re-login).
 
 ![img4](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/privrep2.png "settings")
 
-3. Klikneš na **Invite a collaborator**.
+3. Click **Invite a collaborator**.
 
 ![img5](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/privrep4.png "settings")
 
-  
-
-4. Vyhľadáš spolužiaka a pridáš ho.
+4. Search for your classmate and add them.
 
 ![img6](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/privrep5.png "settings")
 
@@ -399,78 +312,50 @@ Si v tíme so spolužiakom a máte spoločne robiť na projekte, no nechceš, ab
 
 ![img9](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/privrep8.png "settings")
 
-5. Spolužiakovi potom príde na e-mailovú adresu pozvánka, ktorú príjme.
+5. Your classmate will then receive an invitation to their email address, which they will accept.
 
 ![img10](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/privrepo8.png "settings")
 
 ![img11](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/privrepo9.png "settings")
 
-  
+## GitHub Student Developer Pack <a id=student_pack>
 
-## GitHub Student Developer Pack <a id = student_pack>
+GitHub provides a set of tools and benefits **for free** to students. Examples include **JetBrains IDE** or **GitHub Copilot**. Our school is registered with GitHub and therefore as a student you have the opportunity to use these benefits.
 
-  
+For the pack you need:
 
-Github poskytuje pre študentov sadu nástrojov a výhod **zadarmo**. Príkladom je **Jetbrains IDE** alebo **Github Copilot**. Naša škola je registrovaná GitHubom a preto ako študent máš možnosť dané výhody využívať.
+1. **GitHub** Account
 
-Na balíček potrebujete:
+2. Proof of school attendance from **EduPage** or **ISIC**
 
-1. **GitHub** Účet
+3. **School** email address (@spsknm.onmicrosoft.com)
 
-2. Potvrdenie o návšteve školy z **EduPage** alebo **ISIC**
-
-3. **Školskú** e-mailovú adresu (@spsknm.onmicrosoft.com)
-
-  
-
-Začni tým, že si pridáš v nastaveniach školskú emailovú adresu ako **sekundárnu**:
-
-  
+Start by adding your school email address as **secondary** in settings:
 
 ![img12](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/email1.png "settings")
 
-  
-
-Následne choď na stránku https://education.github.com , kde sa prihlás a požiadaj o **discount**. Zvoľ **školskú* e-mailovú adresu a napíš, že akým spôsobom plánuješ využívať **GitHub Student Pack**:
-
-  
+Then go to https://education.github.com , where you log in and request a **discount**. Choose your **school** email address and write how you plan to use the **GitHub Student Pack**:
 
 ![img13](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/imgGEdu.png "settings")
 
-  
-
-Potom klikni na **continue** a nahraj svoj naskenovaný **ISIC** / snímku obrazovky z **EduPage**:
-
-  
+Then click **continue** and upload your scanned **ISIC** / screenshot from **EduPage**:
 
 ![img13](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/eduimg3.png "settings")
 
-  
-  
+For **Proof type** put:
 
-Do **Proof type** daj:
+* if you sent **ISIC** - **Dated School ID**.
 
-  
+* if you sent a screenshot from **EduPage** - **Other (Example: Screenshot of school portal)**.
 
-* pokiaľ si poslal **ISIC** - **Dated School ID**.
+And submit the request. GitHub should respond within **30 days**.
 
-  
+*Note: You need to ask your programming teacher for the school email address (@spsknm.onmicrosoft.com)*
 
-* pokiaľ si poslal snímku obrazovky z **EduPage** - **Other (Example: Screenshot of school portal)**.
+*Note: We recommend reading the official GitHub Education documentation: https://docs.github.com/en/education. We also recommend reading the GitHub Education FAQ if you don't have ISIC: https://github.blog/2019-07-30-how-to-get-the-github-student-developer-pack-without-a-student-id/*
 
-  
+*Note: GitHub often changes these requirements, so this section may be out-of-date. If it is, we welcome pull-requests with corrected procedures.*
 
-A žiadosť odošli. GitHub by sa mal ozvať do **30 dní**.
+## Resources <a id=resources>
 
-
-*Pozn.: Školsku e-mailovú adresu (@spsknm.onmicrosoft.com) si treba pýtať od svojho učiteľa programovania*
-
-*Pozn.: Odporúčame, aby si si prečítal(a) oficiálnu dokumentáciu GitHub Education: https://docs.github.com/en/education. Takisto odporúčame aby si si prečítal(a) FAQ Github Education v prípade že nemáš ISIC: https://github.blog/2019-07-30-how-to-get-the-github-student-developer-pack-without-a-student-id/*
-  
-*Pozn.: Github často mení tieto požiadávky, čiže táto časť môže byť out-of-date. V prípade, že je, uvítame pull-requesty s opraveným postupom.*
-
-## Zdroje <a id = zdroje>
-
-  
-
-GitHub Docs - https://github.com/github/docs/ pod licenciou <a href="https://github.com/github/docs/blob/main/LICENSE">CC-BY 4.0</a>
+GitHub Docs - https://github.com/github/docs/ under <a href="https://github.com/github/docs/blob/main/LICENSE">CC-BY 4.0</a> license

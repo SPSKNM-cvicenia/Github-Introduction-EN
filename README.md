@@ -10,6 +10,7 @@ You probably haven't encountered GitHub yet, but that's okay. In this guide, we'
 * [Setup / Committing from GitHub Desktop](#github_desktop)
 * [Setup / Committing from JetBrains Rider](#commit_rider)
 * [Setup / Committing from Terminal](#commit_cmd)
+* [Writing documentation](#docs)
 * [Collaboration between Classmates](#collaboration)
 * [GitHub Student Developer Pack](#student_pack)
 * [Resources](#resources)
@@ -285,6 +286,70 @@ $ git fetch
 ```
 $ git pull
 ```
+
+## Writing documentation <a id=docs>
+Documentation is an important part of every project. It helps users understand how to use your project and also helps other developers understand how your code works. Github allows you to write documentation in a simple way using **Markdown**. 
+
+If you create file called readme.md in the root of your repository, it will be automatically displayed under the repository name (this repository is a good example, as you can see markdown source of this file by looking at readme.md file in this repository): 
+
+> TIP: Creating a repository with same name as your GitHub username will create a special repository, whose readme.md file will be displayed on your profile page. For example, if your username is `johnDoe`, create a repository called `johnDoe`.
+
+![img_docs1](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/docs.jpg "docs")
+
+Markdown is a simple way to format text. You can create headings, lists, links, images, and more. Here are some basic examples:
+
+```
+# Heading 1
+## Heading 2
+### Heading 3
+
+**Bold text**
+
+*Italic text*
+
+- List item 1
+- List item 2
+
+[Link text](https://example.com)
+
+![Image alt text](https://picsum.photos/200/200)
+
+```
+This will be rendered as:
+# Heading 1
+## Heading 2
+### Heading 3
+
+**Bold text**
+
+*Italic text*
+
+- List item 1
+- List item 2
+
+[Link text](https://example.com)
+
+![Image alt text](https://picsum.photos/200/200)
+
+
+For more information on Markdown, you can refer to the [Markdown Guide](https://www.markdownguide.org/).
+
+> TIP: You can also use [this](https://stackedit.io/app#) online editor to write and preview your Markdown files. Then you can copy the text to your readme.md file.
+
+Github also allows you to have multiple markdown files in your repository, but they're not automatically displayed (user has to manually click on them in repo). You can create a `docs` folder and put all your documentation files there. You can then link to these files from your readme.md file.
+
+
+### Github Pages
+GitHub Pages is a feature that allows you to host a website directly from your GitHub repository. It's a great way to publish documentation or a personal portfolio using just Markdown files.
+
+To get started, create a special repository named `<your-username>.github.io`. The content of this repository's `main` branch will be automatically published as a website.
+
+You can simply create an `index.md` or `README.md` file with Markdown content. For example, adding a file with `# Hello World` will create a homepage with that heading at `https://<your-username>.github.io`.
+
+By default, GitHub Pages uses Jekyll to convert your Markdown files into a static website. You can customize the look and feel with themes and even configure different Markdown processors.
+
+For more information on configuring your site, check out the official documentation on [setting a Markdown processor for your GitHub Pages site](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/setting-a-markdown-processor-for-your-github-pages-site-using-jekyll).
+
 
 ## Collaboration between Classmates <a id=collaboration>
 

@@ -47,7 +47,7 @@ You probably haven't encountered GitHub yet, but that's okay. In this guide, we'
 
 **.gitignore** - gitignore is a file that specifies which parts shouldn't be uploaded along with changes in a commit. It's used to **filter out unnecessary files**, for example those created by the IDE, or **files with sensitive data**.
 
-*Note: These are just basic concepts. We recommend reading the glossary from GitHub's official documentation: https://docs.github.com/en/get-started/quickstart/github-glossary*
+> Note: These are just basic concepts. We recommend reading the glossary from GitHub's official documentation: https://docs.github.com/en/get-started/quickstart/github-glossary
 
 ## Creating a Repository <a id=creating_repository>
 
@@ -415,11 +415,11 @@ For **Proof type** put:
 
 And submit the request. GitHub should respond within **30 days**.
 
-*Note: You need to ask your programming teacher for the school email address (@spsknm.onmicrosoft.com)*
+> Note: You need to ask your programming teacher for the school email address (@spsknm.onmicrosoft.com)
 
-*Note: We recommend reading the official GitHub Education documentation: https://docs.github.com/en/education. We also recommend reading the GitHub Education FAQ if you don't have ISIC: https://github.blog/2019-07-30-how-to-get-the-github-student-developer-pack-without-a-student-id/*
+> Note: We recommend reading the official GitHub Education documentation: https://docs.github.com/en/education. We also recommend reading the GitHub Education FAQ if you don't have ISIC: https://github.blog/2019-07-30-how-to-get-the-github-student-developer-pack-without-a-student-id/
 
-*Note: GitHub often changes these requirements, so this section may be out-of-date. If it is, we welcome pull-requests with corrected procedures.*
+> Note: GitHub often changes these requirements, so this section may be out-of-date. If it is, we welcome pull-requests with corrected procedures.
 
 ## Resources <a id=resources>
 

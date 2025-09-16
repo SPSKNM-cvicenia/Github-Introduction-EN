@@ -294,7 +294,7 @@ If you create file called readme.md in the root of your repository, it will be a
 
 > TIP: Creating a repository with same name as your GitHub username will create a special repository, whose readme.md file will be displayed on your profile page. For example, if your username is `johnDoe`, create a repository called `johnDoe`.
 
-![img_docs1](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/docs.png "docs")
+![img_docs1](https://github.com/SPSKNM-cvicenia/Github-Introduction/blob/main/uploads/docs.jpg "docs")
 
 Markdown is a simple way to format text. You can create headings, lists, links, images, and more. Here are some basic examples:
 
